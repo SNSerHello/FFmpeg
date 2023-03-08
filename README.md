@@ -1,6 +1,128 @@
 FFmpeg README
 =============
 
+## Install 3rd-party libraries
+
+```bash
+git clone --recursive https://github.com/FFmpeg/nv-codec-headers.git
+cd nv-codec-headers
+sudo make install
+
+sudo apt install \
+  nasm \
+  yasm \
+  libchromaprint-dev \
+  libfrei0r-ocaml-dev \
+  libgnutls28-dev \
+  libladspa-ocaml-dev \
+  liblilv-dev \
+  libass-dev \
+  libbluray-dev \
+  libbs2b-dev \
+  libcaca-dev \
+  libcodec2-dev \
+  libdc1394-22-dev \
+  libdrm-dev \
+  libgme-dev \
+  libgsm1-dev \
+  libmysofa-dev \
+  libopenjp2-7-dev \
+  libopenmpt-dev \
+  libopus-dev \
+  libpulse-dev \
+  librsvg2-dev \
+  librubberband-dev \
+  libshine-dev \
+  libsnappy-dev \
+  libsoxr-dev \
+  libssh-dev \
+  libspeex-dev \
+  libtheora-dev \
+  libtwolame-dev \
+  libvidstab-dev \
+  libvpx-dev \
+  libwebp-dev \
+  libx264-dev \
+  libx265-dev \
+  libxvidcore-dev \
+  libzmq3-dev \
+  libzvbi-dev \
+  libopenal-dev \
+  libomxil-bellagio-dev \
+  libjack-dev \
+  libcdio-dev \
+  libcdio-cdda-dev \
+  libcdio-paranoia-dev \
+  libffmpeg-nvenc-dev \
+  libsdl2-dev
+```
+
+## Build FFmpeg
+
+```bash
+./configure \
+  --prefix=./dist \
+  --extra-version=0ubuntu0.1 \
+  --toolchain=hardened \
+  --arch=amd64 \
+  --enable-gpl \
+  --disable-stripping \
+  --disable-filter=resample \
+  --enable-gnutls \
+  --enable-ladspa \
+  --enable-libaom \
+  --enable-libass \
+  --enable-libbluray \
+  --enable-libbs2b \
+  --enable-libcaca \
+  --enable-libcdio \
+  --enable-libcodec2 \
+  --enable-libfontconfig \
+  --enable-libfreetype \
+  --enable-libfribidi \
+  --enable-libgme \
+  --enable-libgsm \
+  --enable-libjack \
+  --enable-libmp3lame \
+  --enable-libmysofa \
+  --enable-libopenjpeg \
+  --enable-libopenmpt \
+  --enable-libopus \
+  --enable-libpulse \
+  --enable-librsvg \
+  --enable-librubberband \
+  --enable-libshine \
+  --enable-libsnappy \
+  --enable-libsoxr \
+  --enable-libspeex \
+  --enable-libssh \
+  --enable-libtheora \
+  --enable-libtwolame \
+  --enable-libvidstab \
+  --enable-libvorbis \
+  --enable-libvpx \
+  --enable-libwebp \
+  --enable-libx265 \
+  --enable-libxml2 \
+  --enable-libxvid \
+  --enable-libzmq \
+  --enable-libzvbi \
+  --enable-lv2 \
+  --enable-omx \
+  --enable-openal \
+  --enable-opencl \
+  --enable-opengl \
+  --enable-sdl2 \
+  --enable-libdc1394 \
+  --enable-libdrm \
+  --enable-nvenc \
+  --enable-chromaprint \
+  --enable-frei0r \
+  --enable-libx264 \
+  --enable-shared \
+  && make install -j
+```
+
 FFmpeg is a collection of libraries and tools to process multimedia content
 such as audio, video, subtitles and related metadata.
 
