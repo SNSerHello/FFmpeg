@@ -4,7 +4,12 @@ FFmpeg README
 ## Install 3rd-party libraries
 
 ```bash
-git clone --recursive https://github.com/FFmpeg/nv-codec-headers.git
+git clone --recursive https://github.com/SNSerHello/openh264.git
+cd openh264
+make OS=linux ARCH=x86_64
+sudo make install
+
+git clone --recursive https://github.com/SNSerHello/nv-codec-headers.git
 cd nv-codec-headers
 sudo make install
 
@@ -55,6 +60,12 @@ sudo apt install \
   libcdio-paranoia-dev \
   libffmpeg-nvenc-dev \
   libsdl2-dev
+```
+
+## Set `LD_LIBRARY_PATH`
+
+```bash
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 ```
 
 ## Build FFmpeg
@@ -120,6 +131,7 @@ sudo apt install \
   --enable-frei0r \
   --enable-libx264 \
   --enable-shared \
+  --enable-libopenh264 \
   && make install -j
 ```
 
