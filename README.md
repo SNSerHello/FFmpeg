@@ -72,7 +72,7 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 ```bash
 ./configure \
-  --prefix=./dist \
+  --prefix=`pwd`/dist \
   --extra-version=0ubuntu0.1 \
   --toolchain=hardened \
   --arch=amd64 \
