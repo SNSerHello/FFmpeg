@@ -17,6 +17,7 @@ sudo apt install \
   nasm \
   yasm \
   libchromaprint-dev \
+  libaom-dev \
   libfrei0r-ocaml-dev \
   libgnutls28-dev \
   libladspa-ocaml-dev \
