@@ -65,6 +65,7 @@ typedef struct AudioFIRContext {
     int gtype;
     float ir_gain;
     int ir_format;
+    int ir_load;
     float max_ir_len;
     int response;
     int w, h;
@@ -91,10 +92,12 @@ typedef struct AudioFIRContext {
 
     AVFrame *in;
     AVFrame *xfade[2];
+    AVFrame *fadein[2];
     AVFrame *ir[MAX_IR_STREAMS];
     AVFrame *norm_ir[MAX_IR_STREAMS];
     AVFrame *video;
     int min_part_size;
+    int max_part_size;
     int64_t pts;
 
     AudioFIRDSPContext afirdsp;
